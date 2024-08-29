@@ -31,15 +31,17 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.css"
+              
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -94,10 +96,7 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
@@ -107,5 +106,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "51de6b78-7a08-480c-879c-9a063b123e47"
   }
 }

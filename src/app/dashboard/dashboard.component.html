@@ -1,0 +1,59 @@
+<section id="aa-menu-area">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="navbar-brand aa-logo" routerLink=""> Home <span>Property</span></a>
+
+            <!-- Toggle Button for Mobile View -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLink="/">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="prop">PROPERTIES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="gallery">GALLERY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="contact">CONTACT</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            PROFILE
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" routerLink="/dashboard">Dashboard</a></li>
+                            <a style="cursor: pointer;" class="dropdown-item" (click)="logout()">
+                                <i class="fa-solid fa-right-from-bracket"></i> Log Out
+                            </a>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+<ng-container *ngIf="role === 'Admin'">
+<div style="margin-top: 110px;" *ngIf="users.length > 0">
+    <ul>
+        <li *ngFor="let user of users">
+            {{ user.name }} 
+             {{ user.role }} <!-- Adjust based on your user object structure -->
+        </li>
+        
+    </ul>
+</div>
+<div *ngIf="users.length === 0">
+    <p>No users found.</p>
+</div>
+</ng-container>
+<h3>Hello,{{fullName}}</h3>
