@@ -52,7 +52,7 @@ export class RegisterComponent {
               position: 'top-end',
               showConfirmButton: false,
             }).then(() => {
-              this.router.navigate(['/login']); 
+              this.router.navigate(['']); 
             });
           },
           error: (err) => {
